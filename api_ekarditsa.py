@@ -58,5 +58,10 @@ def c_stores():
         category_stores.sort(b["sort"],-1)
     return json.dumps(list(category_stores), default=str)
 
+@app.route('/test', methods=['GET'])
+@cross_origin()
+def test():
+    return 'test'
+
 if __name__ == '__main__':
-    app.run(host='127.0.0.1',port=5002)  # run our Flask app
+    app.run(host='0.0.0.0',port=5002)  # run our Flask app
